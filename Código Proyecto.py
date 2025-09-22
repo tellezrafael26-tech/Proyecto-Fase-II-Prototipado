@@ -1,13 +1,30 @@
-# prototipo_bienestar.py
-# ---------------------------------
-# Prototipo funcional en Python puro
-# Plataforma de Bienestar Mental UVG
-# ---------------------------------
+# Comentarios
+# UNIVERSIDAD DEL VALLE DE GUATEMALA
+# Departamento de Ingenieria Civil
+# CC2005- 30
+# Autores: Rafael Téllez, Irvin González, Andrés Morales, Rodrigo Martínez y Allison Figueroa 
+# Fecha: 24/09/25
+# Proyecto2 : Prototipado
+# Descripción: salud Mental en los Universitarios entre los 18 a 23 años, catedráticos y estudiantes que trabajan y estudian
 
-usuarios = {}
-mensajes = []
+usuarios = {}   # Diccionario de usuarios
+mensajes = []   # Lista de mensajes del chat
+
+def mostrar_problema():
+    print("\n=== PROBLEMA IDENTIFICADO ===")
+    print("Los estudiantes universitarios enfrentan dificultades para acceder a apoyo en salud mental.")
+    print("Muchos experimentan estrés, ansiedad o desmotivación, pero no buscan ayuda profesional")
+    print("por miedo, poca disponibilidad de citas o la creencia de que 'no es algo grave'.")
+    print("Esto puede causar bajo rendimiento, aislamiento, abandono de estudios y hasta conductas de riesgo.")
+    print("\n=== SOLUCIÓN EN ESTE PROTOTIPO ===")
+    print("✔ Acceso rápido y sencillo a una plataforma de apoyo.")
+    print("✔ Recursos emocionales disponibles en todo momento (24/7).")
+    print("✔ Podcast semanal para educación y sensibilización.")
+    print("✔ Chat de acompañamiento entre estudiantes para disminuir el estigma.")
+    print("-------------------------------------------------------------")
 
 def menu_principal():
+    mostrar_problema()
     while True:
         print("\n=== Bienestar Mental UVG ===")
         print("1. Registrarse")
@@ -33,14 +50,14 @@ def registrar_usuario():
         return
     contrasena = input("Elige una contraseña: ")
     usuarios[usuario] = contrasena
-    print("Usuario registrado con éxito.")
+    print("Usuario registrado con éxito. Ahora tienes acceso a apoyo en salud mental.")
 
 def login():
     print("\n--- Iniciar sesión ---")
     usuario = input("Usuario: ")
     contrasena = input("Contraseña: ")
     if usuarios.get(usuario) == contrasena:
-        print(f"\n¡Bienvenido {usuario}! 👋")
+        print(f"\n¡Bienvenido {usuario}")
         dashboard(usuario)
     else:
         print("Usuario o contraseña incorrectos.")
@@ -69,13 +86,14 @@ def dashboard(usuario):
 def recursos():
     print("\n--- Recursos emocionales 24/7 ---")
     tips = [
-        "🌿 Respira profundo 3 veces cuando sientas ansiedad.",
-        "🤝 Hablar con un amigo puede ayudarte a liberar tensiones.",
-        "💪 Pedir ayuda es un signo de fortaleza, no de debilidad.",
-        "😴 Descansa al menos 7 horas al día."
+        " Respira profundo 3 veces cuando sientas ansiedad.",
+        " Hablar con un amigo puede ayudarte a liberar tensiones.",
+        " Pedir ayuda es un signo de fortaleza, no de debilidad.",
+        " Descansa al menos 7 horas al día."
     ]
     for t in tips:
         print("-", t)
+    print("\nEstos recursos brindan apoyo inmediato, sin necesidad de esperar una cita.")
 
 def podcast():
     print("\n--- Podcast semanal ---")
@@ -86,6 +104,7 @@ def podcast():
     ]
     for ep in episodios:
         print("-", ep)
+    print("\nEl podcast ofrece educación y sensibilización continua sobre salud mental.")
 
 def chat(usuario):
     print("\n--- Chat de acompañamiento ---")
@@ -105,11 +124,11 @@ def chat(usuario):
         elif opcion == "2":
             texto = input("Escribe tu mensaje: ")
             mensajes.append({"usuario": usuario, "texto": texto})
-            print("Mensaje enviado ✅")
+            print("Mensaje enviado  Este espacio busca reducir la soledad y el estigma.")
         elif opcion == "3":
             break
         else:
             print("Opción inválida.")
 
-# --- Iniciar programa ---
+# Iniciar programa
 menu_principal()
