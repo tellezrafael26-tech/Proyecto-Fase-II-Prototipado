@@ -90,6 +90,7 @@ def recursos():
         " Hablar con un amigo puede ayudarte a liberar tensiones.",
         " Pedir ayuda es un signo de fortaleza, no de debilidad.",
         " Descansa al menos 7 horas al día."
+        " Piensa antes de actuar"
     ]
     for t in tips:
         print("-", t)
@@ -132,3 +133,4 @@ def chat(usuario):
 
 # Iniciar programa
 menu_principal()
+
